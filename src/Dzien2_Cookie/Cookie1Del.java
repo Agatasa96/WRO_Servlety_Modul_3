@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Dzien2_Cookie/showCookie")
-public class Cookie1Get extends HttpServlet {
+@WebServlet("/Dzien2_Cookie/deleteCookie")
+public class Cookie1Del extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -30,7 +30,9 @@ public class Cookie1Get extends HttpServlet {
 		}
 
 		else {
-			respon = c.getValue();
+			c.setMaxAge(0);
+			response.addCookie(c);
+			respon = "Ciasteczko zostalo zjedzone!";
 		}
 
 		response.getWriter().append("<h1>").append(respon).append("</h1>");
