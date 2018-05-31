@@ -58,6 +58,7 @@ public class Sess06 extends HttpServlet {
 				sb.append("Strona 4 ");
 			}
 			response.getWriter().append(sb);
+			
 		}
 	}
 
