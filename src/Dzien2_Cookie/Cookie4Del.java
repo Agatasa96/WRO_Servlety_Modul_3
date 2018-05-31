@@ -8,18 +8,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Cookie4Show")
-public class Cookie4Show extends HttpServlet {
+@WebServlet("/Cookie4Del")
+public class Cookie4Del extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Cookie[] ciasteczka = request.getCookies();
 
-		String resp = "";
+		Cookie[] ciasteczka = request.getCookies();
+		String name = request.getParameter("name");
+
 		for (Cookie c : ciasteczka) {
-			String name = c.getName();
-			resp = "<a href = \"/WRO_Servlety_Modul_3/Dzien2_Cookie/Cookie4Del?name=" + name + "\">" + "Ciasteczko: " + name + "</a>" + "     ";
-			response.getWriter().append(resp);
+			if (name.equals(c.getName())) {
+				c.setMaxAge(0);
+				response.addCookie(c);
+				response.getWriter().append("Usunieto ciacho...");
+			}
 		}
 	}
 
