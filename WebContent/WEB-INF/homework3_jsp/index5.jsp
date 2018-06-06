@@ -12,8 +12,7 @@
 	<c:set var="someName" value="Witaj w coderslab." />
 
 	<c:if test="${fn:contains(someName, 'coderslab')}">
-		<p>OK
-		<p>
+		<p>OK<p>
 	</c:if>
 
 </body>
