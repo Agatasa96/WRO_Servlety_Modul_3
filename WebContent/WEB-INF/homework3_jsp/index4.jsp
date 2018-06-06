@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:set var="now" value="<%=new java.util.Date()%>" />
+	<c:set var="now" value="<%= new java.util.Date()%>" />
 	<p>
 		Data:
 		<fmt:formatDate pattern="yyyy-MM-dd" value="${now}" />
@@ -39,4 +39,3 @@
 
 	</p>
 </body>
-</html>
