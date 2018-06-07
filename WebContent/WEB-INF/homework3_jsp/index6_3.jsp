@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h1>Witaj na stronie 3!</h1>
-	<a href="./Servlet_01"> Link do strony 1</a>
+	<a href="./Servlet_011"> Link do strony 1</a>
 	<a href="./Servlet6_2"> Link do strony 2</a>
 	<a href="./Servlet6_4"> Link do historii</a>
 

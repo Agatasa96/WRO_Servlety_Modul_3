@@ -11,7 +11,7 @@
 <body>
 	<h1>Witaj na stronie 2!</h1>
 
-	<a href="./Servlet_01"> Link do strony 1</a>
+	<a href="./Servlet_011"> Link do strony 1</a>
 	<a href="./Servlet6_3"> Link do strony 3</a>
 	<a href="./Servlet6_4"> Link do historii</a>
 
