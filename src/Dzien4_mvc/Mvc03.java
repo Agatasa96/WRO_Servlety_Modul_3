@@ -12,30 +12,19 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/Mvc03")
 public class Mvc03 extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Mvc03() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String author = request.getParameter("author");
+		String title = request.getParameter("title");
+		String ISBN = request.getParameter("ISBN");
+
+		Book b1 = new Book();
+		b1.setAuthor(author);
+		b1.setTitle(title);
+		b1.setISBN(ISBN);
+
+		request.setAttribute("b1", b1);
+		getServletContext().getRequestDispatcher("/WEB-INF/dzien3_jsp/result.jsp").forward(request, response);
 	}
 
 }
