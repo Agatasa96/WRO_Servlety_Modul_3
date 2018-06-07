@@ -1,6 +1,8 @@
-package Dzien4_mvc;
+package Dzien4_jdbc;
 
 import java.util.List;
+
+import Dzien4_mvc.Book;
 
 public class BookService {
 

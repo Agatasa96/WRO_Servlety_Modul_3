@@ -1,4 +1,4 @@
-package Dzien4_mvc;
+package Dzien4_jdbc;
 
 public class Books {
 	private String author;

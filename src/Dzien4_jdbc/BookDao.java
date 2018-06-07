@@ -1,4 +1,4 @@
-package Dzien4_mvc;
+package Dzien4_jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import Dzien4_mvc.Book;
 
 public class BookDao {
 	public static final String INSERT_INTO_BOOK = "INSERT INTO modul3.Book(title,author,isbn)VALUES(?,?,?)";
