@@ -16,7 +16,7 @@
 	<%
 		List<String> history = (List<String>) sess.getAttribute("history");
 	%>
-	<h3>Odwiedziles:</h3>
+	<h2>Odwiedziles:</h2>
 	<c:forEach var="s" items="<%=history%>">
 		<p>
 			<c:out value="Strona" />
