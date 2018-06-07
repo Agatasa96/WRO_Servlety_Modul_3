@@ -21,7 +21,7 @@ public class Mvc04 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		getServletContext().getRequestDispatcher("/WEB-INF/jsp/form.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/WEB-INF/dzien4_jsp/form.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -37,7 +37,7 @@ public class Mvc04 extends HttpServlet {
 
 		request.setAttribute("books", books);
 
-		getServletContext().getRequestDispatcher("/WEB-INF/jsp/resultZ4.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/WEB-INF/dzien4_jsp/resultZ4.jsp").forward(request, response);
 
 	}
 }
