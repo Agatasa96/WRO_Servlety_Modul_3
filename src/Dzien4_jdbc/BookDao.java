@@ -9,13 +9,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import Dzien4_mvc.Book;
+
 
 public class BookDao {
 	public static final String INSERT_INTO_BOOK = "INSERT INTO modul3.Book(title,author,isbn)VALUES(?,?,?)";
 	public static final String DELETE_FROM_BOOK = "DELETE FROM modul3.Book where id=?";
 	public static final String VIEW_ALL = "SELECT* FROM modul3.Book";
-
+	public static final String EDIT_BOOK = "UPDATE modul3.Book set title=?,author=?,isbn=? where id=?";
 	public boolean insert(Book book) {
 		try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/?useSSL=false", "root",
 				"coderslab")) {
@@ -75,6 +75,25 @@ public class BookDao {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	public boolean edit(Book book, long id) {
+		try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/?useSSL=false", "root",
+				"coderslab")) {
+
+			PreparedStatement ps = conn.prepareStatement(EDIT_BOOK);
+			ps.setString(1, book.getTitle());
+			ps.setString(2, book.getAuthor());
+			ps.setString(3, book.getISBN());
+			ps.setLong(4, id);
+			ps.executeUpdate();
+			return true;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+
 	}
 
 }

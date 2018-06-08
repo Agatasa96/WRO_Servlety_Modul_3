@@ -2,7 +2,7 @@ package Dzien4_jdbc;
 
 import java.util.List;
 
-import Dzien4_mvc.Book;
+
 
 public class BookService {
 
@@ -52,6 +52,16 @@ public class BookService {
 		}
 		msg.append("</table>");
 
+		return msg;
+	}
+	
+	public String editBook(Book book, Long id) {
+		String msg;
+		if (bookDao.edit(book, id)) {
+			msg = "<h1>Zedytowano ksiazke o id:" + id.toString() + "</h1>";
+		} else {
+			msg = "<h1>Nie mozna edytowac </h1>";
+		}
 		return msg;
 	}
 

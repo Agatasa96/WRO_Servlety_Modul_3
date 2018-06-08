@@ -1,6 +1,6 @@
 package Dzien4_jdbc;
 
-public class Books {
+public class Book {
 	private String author;
 	private String title;
 	private String ISBN;
@@ -34,14 +34,14 @@ public class Books {
 		return "Book: author = " + author + ", title = " + title;
 	}
 
-	public Books(String author, String title, String iSBN) {
+	public Book(String author, String title, String iSBN) {
 		super();
 		this.author = author;
 		this.title = title;
 		ISBN = iSBN;
 	}
 
-	public Books() {
+	public Book() {
 
 	}
 
