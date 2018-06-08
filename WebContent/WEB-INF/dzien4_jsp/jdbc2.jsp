@@ -14,8 +14,6 @@
 <input type = "text" name = "author">
 <label>ISBN</label>
 <input type = "text" name = "isbn"> 
-<label>ID</label>
-<input type = "text" name = "id"> 
 <input type = "submit" value = "Send">
 </body>
 </html>
