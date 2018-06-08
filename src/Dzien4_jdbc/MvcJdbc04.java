@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -18,15 +19,19 @@ public class MvcJdbc04 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		getServletContext().getRequestDispatcher("/WEB-INF/dzien4_jsp/jdbc1.jsp")
+		String id = request.getParameter("id");
+		HttpSession sess = request.getSession();
+		sess.setAttribute("id", id);
+		getServletContext().getRequestDispatcher("/WEB-INF/dzien4_jsp/jdbc4.jsp")
 		.forward(request, response);	
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String msg;
+		HttpSession sess = request.getSession();
 		try {
-			String id = request.getParameter("id");
+			String id = (String) sess.getAttribute("id");
 			long idP = Long.parseLong(id);
 			String title = request.getParameter("title");
 			String author = request.getParameter("author");

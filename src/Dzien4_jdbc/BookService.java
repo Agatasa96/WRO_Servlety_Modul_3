@@ -47,6 +47,14 @@ public class BookService {
 			.append(books.get(i + 2))
 			.append("</th><th> ")
 			.append(books.get(i + 3))
+			.append("</th><th>")
+			.append("<a href = \"./delete-book?id=")
+			.append(books.get(i))
+			.append("\">Usun</a>")
+			.append("</th><th>")
+			.append("<a href = \"./Jdbc0444?id=")
+			.append(books.get(i))
+			.append("\">Edytuj</a>")
 			.append("</th></tr>");
 
 		}
